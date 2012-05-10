@@ -1,5 +1,5 @@
 Name:           tucnak2
-Version:        2.46
+Version:        2.48
 Release:        1
 Summary:        VHF contest logging program
 Group:          Communications 
@@ -7,12 +7,12 @@ License:        GPLv2+
 URL:            http://tucnak.nagano.cz/wiki/Main_Page
 Source0:        http://tucnak.nagano.cz/%{name}-%{version}.tar.gz
 Patch0:         missing_ftdi_header.patch
+Patch1:         include_dir_ftdi-2.48.patch
 
-BuildRequires:  SDL-devel, glib2-devel, libpng-devel, libsndfile-devel
-BuildRequires:  gpm-devel, alsa-lib-devel, hamlib-devel, libusb-devel
-BuildRequires:  desktop-file-utils,fftw-devel, automake
+BuildRequires:  SDL-devel, glib2-devel, libpng-devel, pkgconfig(sndfile)
+BuildRequires:  gpm-devel, alsa-oss-devel, hamlib-devel, libusb-devel
+BuildRequires:  desktop-file-utils,fftw-devel, automake pkgconfig(libftdi)
 BuildRequires:  pkgconfig(libftdi)
-#Requires:       
 
 %description
 Tucnak2 is VHF/UHF/SHF log for hamradio contests. It supports multi
@@ -22,6 +22,7 @@ much more.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 sed -i -e "s/Encoding=UTF-8//g" -e "s/Categories=HamRadio/Categories=Network;HamRadio;/g" share/applications/%{name}.desktop
 
 #all files must be UTF-8
@@ -36,8 +37,8 @@ recode TODO iso-8859-15
 
 %build
 autoreconf -fiv
-%configure --with-sdl
-%make
+%configure2_5x --with-sdl
+make
 
 
 %install
