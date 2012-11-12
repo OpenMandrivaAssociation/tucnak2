@@ -1,0 +1,13 @@
+diff --git a/src/header.h b/src/header.h
+index add8335..59a58df 100644
+--- a/src/header.h
++++ b/src/header.h
+@@ -252,7 +252,7 @@ typedef long long vint;
+ 
+ 
+ #ifdef HAVE_LIBFTDI
+-#include <libftdi/ftdi.h>
++#include <ftdi.h>
+ #endif
+ 
+ #include "setup.h"
