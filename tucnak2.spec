@@ -9,9 +9,9 @@ Source0:        http://tucnak.nagano.cz/%{name}-%{version}.tar.gz
 Patch0:         missing_ftdi_header.patch
 Patch1:         include_dir_ftdi-2.48.patch
 
-BuildRequires:  SDL-devel, glib2-devel, libpng-devel, pkgconfig(sndfile)
-BuildRequires:  gpm-devel, alsa-oss-devel, hamlib-devel, libusb-devel
-BuildRequires:  desktop-file-utils,fftw-devel, automake pkgconfig(libftdi)
+BuildRequires:  pkgconfig(sdl), pkgconfig(glib-2.0), pkgconfig(libpng), pkgconfig(sndfile)
+BuildRequires:  gpm-devel, alsa-oss-devel, hamlib-devel, pkgconfig(libusb-1.0)
+BuildRequires:  desktop-file-utils,pkgconfig(fftw3), automake pkgconfig(libftdi)
 BuildRequires:  pkgconfig(libftdi)
 
 %description
@@ -38,7 +38,7 @@ recode TODO iso-8859-15
 %build
 autoreconf -fiv
 %configure2_5x --with-sdl
-make
+%make
 
 
 %install
