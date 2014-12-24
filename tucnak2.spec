@@ -1,6 +1,6 @@
 Name:           tucnak2
 Version:        2.48
-Release:        1
+Release:        2
 Summary:        VHF contest logging program
 Group:          Communications 
 License:        GPLv2+
@@ -13,6 +13,8 @@ BuildRequires:  pkgconfig(sdl), pkgconfig(glib-2.0), pkgconfig(libpng), pkgconfi
 BuildRequires:  gpm-devel, alsa-oss-devel, hamlib-devel, pkgconfig(libusb-1.0)
 BuildRequires:  desktop-file-utils,pkgconfig(fftw3), automake pkgconfig(libftdi)
 BuildRequires:  pkgconfig(libftdi)
+
+Conflicts:      soundwrapper
 
 %description
 Tucnak2 is VHF/UHF/SHF log for hamradio contests. It supports multi
