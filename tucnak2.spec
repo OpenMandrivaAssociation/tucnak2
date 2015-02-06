@@ -1,6 +1,6 @@
 Name:           tucnak2
 Version:        2.48
-Release:        2
+Release:        3
 Summary:        VHF contest logging program
 Group:          Communications 
 License:        GPLv2+
