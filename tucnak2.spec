@@ -4,7 +4,7 @@ Release:        3
 Summary:        VHF contest logging program
 Group:          Communications 
 License:        GPLv2+
-URL:            http://tucnak.nagano.cz/wiki/Main_Page
+URL:            https://tucnak.nagano.cz/wiki/Main_Page
 Source0:        http://tucnak.nagano.cz/%{name}-%{version}.tar.gz
 Patch0:         missing_ftdi_header.patch
 Patch1:         include_dir_ftdi-2.48.patch
