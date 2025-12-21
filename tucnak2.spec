@@ -9,6 +9,9 @@ Source0:        http://tucnak.nagano.cz/%{name}-%{version}.tar.gz
 Patch0:         missing_ftdi_header.patch
 Patch1:         include_dir_ftdi-2.48.patch
 
+BuildRequires:	autoconf
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:  pkgconfig(sdl), pkgconfig(glib-2.0), pkgconfig(libpng), pkgconfig(sndfile)
 BuildRequires:  gpm-devel, alsa-oss-devel, hamlib-devel, pkgconfig(libusb-1.0)
 BuildRequires:  desktop-file-utils,pkgconfig(fftw3), automake pkgconfig(libftdi)
